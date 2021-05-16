@@ -1,0 +1,23 @@
+{
+  "exnaturae.compat.mod_not_loaded": "A besoin de: %s",
+
+  "itemGroup.exnaturae": "Ex Naturae",
+
+  "item.exnaturae.livingwood_hammer": "Marteau en vifbois",
+  "item.exnaturae.livingrock_hammer": "Marteau en viveroche",
+  "item.exnaturae.manasteel_hammer": "Marteau en manacier",
+  "item.exnaturae.elementium_hammer": "Marteau en élémentium",
+  "item.exnaturae.terrasteel_hammer": "Marteau en terracier",
+
+  "item.exnaturae.livingwood_crook": "Houlette en vifbois",
+  "item.exnaturae.dreamwood_crook": "Houlette en boisrève",
+
+  "item.exnaturae.compressed_livingwood_hammer": "Marteau en vifbois compressé",
+  "item.exnaturae.compressed_livingrock_hammer": "Marteau en viveroche compressé",
+  "item.exnaturae.compressed_manasteel_hammer": "Marteau en manacier compressé",
+  "item.exnaturae.compressed_elementium_hammer": "Marteau en élémentium compressé",
+  "item.exnaturae.compressed_terrasteel_hammer": "Marteau en terracier compressé",
+
+  "item.exnaturae.compressed_livingwood_crook": "Houlette en vifbois compressée",
+  "item.exnaturae.compressed_dreamwood_crook": "Houlette en boisrève compressée"
+}

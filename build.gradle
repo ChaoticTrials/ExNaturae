@@ -1,0 +1,47 @@
+buildscript {
+    apply from: 'https://raw.githubusercontent.com/noeppi-noeppi/ModUtils/master/buildscript.gradle', to: buildscript
+}
+
+apply from: 'https://raw.githubusercontent.com/noeppi-noeppi/ModUtils/master/mod.gradle'
+
+repositories {
+    maven {
+        name = "JEI"
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
+    maven {
+        name = "curios"
+        url = "https://maven.theillusivec4.top/"
+    }
+    maven {
+        name = "LibX"
+        url = "https://maven.melanx.de/"
+    }
+    maven {
+        name = "Ex Nihilo"
+        url = "https://repo.jacob-williams.me/repository/maven-releases/"
+    }
+    maven {
+        name = "CurseForge"
+        url = "https://www.cursemaven.com"
+    }
+    maven {
+        name = "botania"
+        url = "https://maven.blamejared.com/"
+    }
+}
+
+dependencies {
+    annotationProcessor fg.deobf("io.github.noeppi_noeppi.mods:LibX:1.16.3-1.0.63")
+    compile fg.deobf("io.github.noeppi_noeppi.mods:LibX:1.16.3-1.0.63")
+
+    compile fg.deobf("novamachina:exnihilosequentia:1.16-2.0.2.6")
+    compile fg.deobf("vazkii.botania:Botania:1.16.4-414")
+
+    compile fg.deobf("curse.maven:ex-compressum-241967:3226248") // 1.16.5-4.0.2
+
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.16.4-4.0.3.0")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.16.4:7.6.0.62")
+    runtimeOnly fg.deobf("de.melanx.recipeprinter:recipeprinter-1.16.3:2.0.4")
+}

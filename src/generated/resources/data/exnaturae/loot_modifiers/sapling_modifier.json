@@ -1,0 +1,15 @@
+{
+  "conditions": [
+    {
+      "condition": "exnaturae:block_tag",
+      "tag": "minecraft:leaves"
+    },
+    {
+      "condition": "minecraft:match_tool",
+      "predicate": {
+        "item": "exnaturae:dreamwood_crook"
+      }
+    }
+  ],
+  "type": "exnaturae:sapling_modifier"
+}

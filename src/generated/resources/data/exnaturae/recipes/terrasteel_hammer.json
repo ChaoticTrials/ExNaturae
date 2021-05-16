@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "hammer",
+  "pattern": [
+    " m ",
+    " rm",
+    "r  "
+  ],
+  "key": {
+    "m": {
+      "item": "botania:terrasteel_ingot"
+    },
+    "r": {
+      "item": "botania:livingwood_twig"
+    }
+  },
+  "result": {
+    "item": "exnaturae:terrasteel_hammer"
+  }
+}

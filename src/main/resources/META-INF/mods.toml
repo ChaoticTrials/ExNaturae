@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[35,)"
+license="The Apache License, Version 2.0"
+issueTrackerURL="http://github.com/MelanX/ExNaturae/issues"
+
+[[mods]]
+modId="exnaturae"
+version="${file.jarVersion}"
+displayName="Ex Naturae"
+displayURL="www.curseforge.com/members/melanx/"
+authors="MelanX"
+description="""
+An addon to combine Ex Nihilo: Sequentia and Botania
+"""
+
+[[dependencies.exnaturae]]
+    modId="forge"
+    mandatory=true
+    versionRange="[35.1.7,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.exnaturae]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.4,)"
+    ordering="NONE"
+    side="BOTH"

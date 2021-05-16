@@ -1,0 +1,6 @@
+official = mc(${mc})
+srg = srg(${mc})
+srg_offcial = prefix(mapped, "mc_", obfmap(srg, official))
+mapped = mcp(snapshot_20210309-1.16.4)
+srg_mapped = partial(srg_offcial, mapped)
+write(merge(srg, srg_mapped, srg_offcial), mcp, ${out})
