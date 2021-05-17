@@ -8,6 +8,7 @@ modId="exnaturae"
 version="${file.jarVersion}"
 displayName="Ex Naturae"
 displayURL="www.curseforge.com/members/melanx/"
+credits="Translators: 19PixelsPlaced (French), Chosen (Russian), DrMrPotatoe (Spanish)"
 authors="MelanX"
 description="""
 An addon to combine Ex Nihilo: Sequentia and Botania
@@ -24,5 +25,33 @@ An addon to combine Ex Nihilo: Sequentia and Botania
     modId="minecraft"
     mandatory=true
     versionRange="[1.16.4,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.exnaturae]]
+    modId="libx"
+    mandatory=true
+    versionRange="[1.16.3-1.0.63,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.exnaturae]]
+    modId="botania"
+    mandatory=true
+    versionRange="[1.16.4-414,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.exnaturae]]
+    modId="exnihilosequentia"
+    mandatory=true
+    versionRange="[1.16-2.0.2.6,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.exnaturae]]
+    modId="excompressum"
+    mandatory=false
+    versionRange="[1.16.5-4.0.2,)"
     ordering="NONE"
     side="BOTH"

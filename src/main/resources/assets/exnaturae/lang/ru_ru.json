@@ -1,23 +1,23 @@
 {
-  "exnaturae.compat.mod_not_loaded": "Необходим мод: %s",
+  "exnaturae.compat.mod_not_loaded": "Необходима модификация: %s",
 
   "itemGroup.exnaturae": "Ex Naturae",
 
-  "item.exnaturae.livingwood_hammer": "Молот из живого дерева",
-  "item.exnaturae.livingrock_hammer": "Молот из живого камня",
+  "item.exnaturae.livingwood_hammer": "Молот из жизнедерева",
+  "item.exnaturae.livingrock_hammer": "Молот из жизнекамня",
   "item.exnaturae.manasteel_hammer": "Молот из манастали",
   "item.exnaturae.elementium_hammer": "Молот из элементия",
   "item.exnaturae.terrasteel_hammer": "Молот из террастали",
 
-  "item.exnaturae.livingwood_crook": "Крюк из живого дерева",
-  "item.exnaturae.dreamwood_crook": "Крюк из дерева снов",
+  "item.exnaturae.livingwood_crook": "Крюк из жизнедерева",
+  "item.exnaturae.dreamwood_crook": "Крюк из древесины мечтаний",
 
-  "item.exnaturae.compressed_livingwood_hammer": "Сжатый Молот из живого дерева",
-  "item.exnaturae.compressed_livingrock_hammer": "Сжатый Молот из живого камня",
+  "item.exnaturae.compressed_livingwood_hammer": "Сжатый Молот из жизнедерева",
+  "item.exnaturae.compressed_livingrock_hammer": "Сжатый Молот из жизнекамня",
   "item.exnaturae.compressed_manasteel_hammer": "Сжатый Молот из манастали",
   "item.exnaturae.compressed_elementium_hammer": "Сжатый Молот из элементия",
   "item.exnaturae.compressed_terrasteel_hammer": "Сжатый Молот из террастали",
 
-  "item.exnaturae.compressed_livingwood_crook": "Сжатый Крюк из живого дерева",
-  "item.exnaturae.compressed_dreamwood_crook": "Сжатый Крюк из дерева снов"
+  "item.exnaturae.compressed_livingwood_crook": "Сжатый Крюк из жизнедерева",
+  "item.exnaturae.compressed_dreamwood_crook": "Сжатый Крюк из древесины мечтаний"
 }

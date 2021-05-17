@@ -1,0 +1,23 @@
+{
+  "exnaturae.compat.mod_not_loaded": "Diese Mod wird benötigt: %s",
+
+  "itemGroup.exnaturae": "Ex Naturae",
+
+  "item.exnaturae.livingwood_hammer": "Lebeholzhammer",
+  "item.exnaturae.livingrock_hammer": "Lebesteinhammer",
+  "item.exnaturae.manasteel_hammer": "Manastahlhammer",
+  "item.exnaturae.elementium_hammer": "Elementiumhammer",
+  "item.exnaturae.terrasteel_hammer": "Terrastahlhammer",
+
+  "item.exnaturae.livingwood_crook": "Lebeholzstab",
+  "item.exnaturae.dreamwood_crook": "Traumholzstab",
+
+  "item.exnaturae.compressed_livingwood_hammer": "Komprimierter Lebeholzhammer",
+  "item.exnaturae.compressed_livingrock_hammer": "Komprimierter Lebesteinhammer",
+  "item.exnaturae.compressed_manasteel_hammer": "Komprimierter Manastahlhammer",
+  "item.exnaturae.compressed_elementium_hammer": "Komprimierter Elementiumhammer",
+  "item.exnaturae.compressed_terrasteel_hammer": "Komprimierter Terrastahlhammer",
+
+  "item.exnaturae.compressed_livingwood_crook": "Komprimierter Lebeholzstab",
+  "item.exnaturae.compressed_dreamwood_crook": "Komprimierter Traumholzstab"
+}

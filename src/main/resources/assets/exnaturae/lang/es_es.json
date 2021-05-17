@@ -1,0 +1,23 @@
+{
+  "exnaturae.compat.mod_not_loaded": "Necesita este mod: %s",
+
+  "itemGroup.exnaturae": "Ex Naturae",
+
+  "item.exnaturae.livingwood_hammer": "Martillo de madera viviente",
+  "item.exnaturae.livingrock_hammer": "Martillo de piedra viviente",
+  "item.exnaturae.manasteel_hammer": "Martillo de manacero",
+  "item.exnaturae.elementium_hammer": "Martillo de elementio",
+  "item.exnaturae.terrasteel_hammer": "Martillo de terracero",
+
+  "item.exnaturae.livingwood_crook": "Cayado de madera viviente",
+  "item.exnaturae.dreamwood_crook": "Cayado de madera onírica",
+
+  "item.exnaturae.compressed_livingwood_hammer": "Martillo de madera viviente comprimido",
+  "item.exnaturae.compressed_livingrock_hammer": "Martillo de piedra viviente comprimido",
+  "item.exnaturae.compressed_manasteel_hammer": "Martillo de manacero comprimido",
+  "item.exnaturae.compressed_elementium_hammer": "Martillo de elementio comprimido",
+  "item.exnaturae.compressed_terrasteel_hammer": "Martillo de terracero comprimido",
+
+  "item.exnaturae.compressed_livingwood_crook": "Cayado de madera viviente comprimido",
+  "item.exnaturae.compressed_dreamwood_crook": "Cayado de madera onírica comprimido"
+}
