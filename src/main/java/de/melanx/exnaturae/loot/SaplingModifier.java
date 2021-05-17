@@ -8,6 +8,7 @@ import net.minecraft.loot.LootContext;
 import net.minecraft.loot.LootParameters;
 import net.minecraft.loot.LootTable;
 import net.minecraft.loot.conditions.ILootCondition;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
@@ -26,11 +27,17 @@ public class SaplingModifier extends LootModifier {
     @Override
     protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context) {
         BlockState state = context.get(LootParameters.BLOCK_STATE);
-        //noinspection ConstantConditions
-        LootTable lootTable = context.getLootTable(state.getBlock().getLootTable());
-        ItemStack sapling = getSapling(lootTable, context);
-        if (sapling != null) {
-            generatedLoot.add(sapling);
+
+        if (state == null) {
+            return generatedLoot;
+        }
+
+        if (BlockTags.LEAVES.contains(state.getBlock())) {
+            LootTable lootTable = context.getLootTable(state.getBlock().getLootTable());
+            ItemStack sapling = getSapling(lootTable, context);
+            if (sapling != null) {
+                generatedLoot.add(sapling);
+            }
         }
 
         return generatedLoot;
