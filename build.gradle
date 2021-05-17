@@ -19,7 +19,7 @@ repositories {
     }
     maven {
         name = "Ex Nihilo"
-        url = "https://repo.jacob-williams.me/repository/maven-releases/"
+        url = "https://repo.jacob-williams.me/repository/maven-releases/" // not really working in Jenkins at the moment
     }
     maven {
         name = "CurseForge"
@@ -35,7 +35,7 @@ dependencies {
     annotationProcessor fg.deobf("io.github.noeppi_noeppi.mods:LibX:1.16.3-1.0.63")
     compile fg.deobf("io.github.noeppi_noeppi.mods:LibX:1.16.3-1.0.63")
 
-    compile fg.deobf("novamachina:exnihilosequentia:1.16-2.0.2.6")
+    compile fg.deobf("curse.maven:ex-nihilo-sequentia-400012:3294507") // 1.16-2.0.2.6
     compile fg.deobf("vazkii.botania:Botania:1.16.4-414")
 
     compile fg.deobf("curse.maven:ex-compressum-241967:3226248") // 1.16.5-4.0.2
