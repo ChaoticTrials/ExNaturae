@@ -7,7 +7,6 @@ import de.melanx.exnaturae.item.hammer.ElementiumHammer;
 import de.melanx.exnaturae.item.hammer.TerrasteelHammer;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
-import net.minecraftforge.fml.ModList;
 
 public class ExCompressumCompat {
 
@@ -46,6 +45,6 @@ public class ExCompressumCompat {
     }
 
     public static boolean isExCompressumLoaded() {
-        return ModList.get().isLoaded(MODID);
+        return false; // ModList.get().isLoaded(MODID); TODO re-add when I have textures
     }
 }

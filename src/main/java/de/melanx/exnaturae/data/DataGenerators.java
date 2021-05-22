@@ -19,7 +19,7 @@ public class DataGenerators {
         }
 
         if (event.includeClient()) {
-//            generator.addProvider(new ItemModelProvider(generator, helper)); TODO add textures
+            generator.addProvider(new ItemModelProvider(generator, helper));
         }
     }
 }
