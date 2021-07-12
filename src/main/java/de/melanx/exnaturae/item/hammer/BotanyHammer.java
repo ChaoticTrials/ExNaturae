@@ -29,7 +29,15 @@ public class BotanyHammer extends ToolItem implements IManaUsingItem {
     }
 
     public BotanyHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana, boolean compressed) {
-        super(attackDamage, attackSpeed, tier, Sets.newHashSet(), new Item.Properties().group(ExNaturae.getInstance().tab));
+        this(attackDamage, attackSpeed, tier, mana, compressed, new Item.Properties().group(ExNaturae.getInstance().tab));
+    }
+
+    public BotanyHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana, Item.Properties properties) {
+        this(attackDamage, attackSpeed, tier, mana, false, properties);
+    }
+
+    public BotanyHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana, boolean compressed, Item.Properties properties) {
+        super(attackDamage, attackSpeed, tier, Sets.newHashSet(), properties);
         this.mana = mana;
         this.compressed = compressed;
     }

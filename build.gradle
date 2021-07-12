@@ -18,10 +18,6 @@ repositories {
         url = "https://maven.melanx.de/"
     }
     maven {
-        name = "Ex Nihilo"
-        url = "https://repo.jacob-williams.me/repository/maven-releases/" // not really working in Jenkins at the moment
-    }
-    maven {
         name = "CurseForge"
         url = "https://www.cursemaven.com"
     }

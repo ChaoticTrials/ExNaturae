@@ -24,12 +24,20 @@ public class BotanyCrook extends ToolItem implements IManaUsingItem {
     private final int mana;
     private final boolean compressed;
 
-    public BotanyCrook(float attackDamageIn, float attackSpeedIn, IItemTier tier, int mana) {
-        this(attackDamageIn, attackSpeedIn, tier, mana, false);
+    public BotanyCrook(float attackDamage, float attackSpeed, IItemTier tier, int mana) {
+        this(attackDamage, attackSpeed, tier, mana, false);
     }
 
-    public BotanyCrook(float attackDamageIn, float attackSpeedIn, IItemTier tier, int mana, boolean compressed) {
-        super(attackDamageIn, attackSpeedIn, tier, Sets.newHashSet(), new Item.Properties().group(ExNaturae.getInstance().tab));
+    public BotanyCrook(float attackDamage, float attackSpeed, IItemTier tier, int mana, boolean compressed) {
+        this(attackDamage, attackSpeed, tier, mana, compressed, new Item.Properties().group(ExNaturae.getInstance().tab));
+    }
+
+    public BotanyCrook(float attackDamage, float attackSpeed, IItemTier tier, int mana, Item.Properties properties) {
+        this(attackDamage, attackSpeed, tier, mana, false, properties);
+    }
+
+    public BotanyCrook(float attackDamage, float attackSpeed, IItemTier tier, int mana, boolean compressed, Item.Properties properties) {
+        super(attackDamage, attackSpeed, tier, Sets.newHashSet(), properties);
         this.mana = mana;
         this.compressed = compressed;
     }

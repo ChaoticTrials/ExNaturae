@@ -2,6 +2,7 @@ package de.melanx.exnaturae.data;
 
 import com.google.gson.JsonArray;
 import de.melanx.exnaturae.ExNaturae;
+import de.melanx.exnaturae.compat.excompressum.ExCompressumCompat;
 import de.melanx.exnaturae.item.ModItems;
 import io.github.noeppi_noeppi.libx.data.provider.recipe.RecipeProviderBase;
 import net.minecraft.data.DataGenerator;
@@ -32,13 +33,13 @@ public class RecipeProvider extends RecipeProviderBase {
         this.makeHammer(consumer, ModItems.elementiumHammer, vazkii.botania.common.item.ModItems.elementium, vazkii.botania.common.item.ModItems.dreamwoodTwig);
         this.makeHammer(consumer, ModItems.terrasteelHammer, vazkii.botania.common.item.ModItems.terrasteel, vazkii.botania.common.item.ModItems.livingwoodTwig);
 
-//        this.makeCrook(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedLivingwoodCrook, ModItems.livingwoodCrook);
-//        this.makeCrook(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedDreamwoodCrook, ModItems.dreamwoodCrook);
-//        this.compress(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedLivingwoodHammer, ModItems.livingwoodHammer);
-//        this.compress(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedLivingrockHammer, ModItems.livingrockHammer);
-//        this.compress(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedManasteelHammer, ModItems.manasteelHammer);
-//        this.compress(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedElementiumHammer, ModItems.elementiumHammer);
-//        this.compress(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedTerrasteelHammer, ModItems.terrasteelHammer);
+        this.makeCrook(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedLivingwoodCrook, ModItems.livingwoodCrook);
+        this.makeCrook(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedDreamwoodCrook, ModItems.dreamwoodCrook);
+        this.compress(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedLivingwoodHammer, ModItems.livingwoodHammer);
+        this.compress(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedLivingrockHammer, ModItems.livingrockHammer);
+        this.compress(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedManasteelHammer, ModItems.manasteelHammer);
+        this.compress(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedElementiumHammer, ModItems.elementiumHammer);
+        this.compress(this.modLoadedConsumer(consumer, ExCompressumCompat.MODID), ModItems.compressedTerrasteelHammer, ModItems.terrasteelHammer);
     }
 
     private void makeHammer(Consumer<IFinishedRecipe> consumer, IItemProvider hammer, IItemProvider material, IItemProvider rod) {

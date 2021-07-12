@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "exnaturae:item/compressed_livingwood_hammer"
+  }
+}

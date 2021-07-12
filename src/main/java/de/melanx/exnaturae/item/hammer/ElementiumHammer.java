@@ -8,6 +8,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.monster.MonsterEntity;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -25,11 +26,19 @@ public class ElementiumHammer extends BotanyHammer {
     private static final float b = 0.576F;
 
     public ElementiumHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana) {
-        super(attackDamage, attackSpeed, tier, mana, false);
+        this(attackDamage, attackSpeed, tier, mana, false);
     }
 
     public ElementiumHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana, boolean compressed) {
         super(attackDamage, attackSpeed, tier, mana, compressed);
+    }
+
+    public ElementiumHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana, Item.Properties properties) {
+        this(attackDamage, attackSpeed, tier, mana, false, properties);
+    }
+
+    public ElementiumHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana, boolean compressed, Item.Properties properties) {
+        super(attackDamage, attackSpeed, tier, mana, compressed, properties);
     }
 
     @Override

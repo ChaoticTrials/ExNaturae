@@ -5,6 +5,7 @@ import net.minecraft.block.BlockState;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.IItemTier;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
@@ -26,11 +27,19 @@ public class TerrasteelHammer extends BotanyHammer implements ISequentialBreaker
     private static final float b = 0.3F;
 
     public TerrasteelHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana) {
-        super(attackDamage, attackSpeed, tier, mana, false);
+        this(attackDamage, attackSpeed, tier, mana, false);
     }
 
     public TerrasteelHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana, boolean compressed) {
         super(attackDamage, attackSpeed, tier, mana, compressed);
+    }
+
+    public TerrasteelHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana, Item.Properties properties) {
+        this(attackDamage, attackSpeed, tier, mana, false, properties);
+    }
+
+    public TerrasteelHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana, boolean compressed, Item.Properties properties) {
+        super(attackDamage, attackSpeed, tier, mana, compressed, properties);
     }
 
     @Override

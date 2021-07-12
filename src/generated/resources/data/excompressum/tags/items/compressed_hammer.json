@@ -1,19 +1,10 @@
 {
   "replace": false,
   "values": [
-    "exnaturae:livingwood_hammer",
-    "exnaturae:livingrock_hammer",
-    "exnaturae:manasteel_hammer",
-    "exnaturae:elementium_hammer",
-    "exnaturae:terrasteel_hammer",
-    "exnaturae:livingwood_crook",
-    "exnaturae:dreamwood_crook",
     "exnaturae:compressed_livingwood_hammer",
     "exnaturae:compressed_livingrock_hammer",
     "exnaturae:compressed_manasteel_hammer",
     "exnaturae:compressed_elementium_hammer",
-    "exnaturae:compressed_terrasteel_hammer",
-    "exnaturae:compressed_livingwood_crook",
-    "exnaturae:compressed_dreamwood_crook"
+    "exnaturae:compressed_terrasteel_hammer"
   ]
 }

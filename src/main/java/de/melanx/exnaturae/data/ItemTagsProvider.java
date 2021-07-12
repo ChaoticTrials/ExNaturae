@@ -28,12 +28,13 @@ public class ItemTagsProvider extends ItemTagProviderBase {
 
     @Override
     public void defaultItemTags(Item item) {
-        this.getOrCreateBuilder(COMPAT_COMPRESSED_HAMMER).add(item);
+        this.getOrCreateBuilder(COMPAT_HAMMER).add(item);
         if (item instanceof BotanyHammer) {
             if (((BotanyHammer) item).isCompressed()) {
-                this.getOrCreateBuilder(COMPAT_HAMMER).add(item);
+                this.getOrCreateBuilder(COMPAT_COMPRESSED_HAMMER).add(item);
+            } else {
+                this.getOrCreateBuilder(ExNihiloTags.HAMMER).add(item);
             }
-            this.getOrCreateBuilder(ExNihiloTags.HAMMER).add(item);
         } else if (item instanceof BotanyCrook && !((BotanyCrook) item).isCompressed()) {
             this.getOrCreateBuilder(ExNihiloTags.CROOK).add(item);
         }
