@@ -14,11 +14,10 @@ import net.minecraftforge.fml.ModList;
 public class ExCompressumCompat {
 
     public static final String MODID = "excompressum";
-    public static final Item.Properties ITEM_PROPERTIES = new Item.Properties().group(ExNaturae.getInstance().tab).setISTER(() -> RenderCompressedItem::new);
 
     public static Item makeCompressedCrook(float attackDamage, float attackSpeed, IItemTier tier, int mana) {
         if (isExCompressumLoaded()) {
-            return new BotanyCrook(attackDamage, attackSpeed, tier, mana, true, ITEM_PROPERTIES);
+            return new BotanyCrook(attackDamage, attackSpeed, tier, mana, true, ExCompressumCompat.itemProperties());
         } else {
             return new DummyItem(MODID);
         }
@@ -26,7 +25,7 @@ public class ExCompressumCompat {
 
     public static Item makeCompressedHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana) {
         if (isExCompressumLoaded()) {
-            return new BotanyHammer(attackDamage, attackSpeed, tier, mana, true, ITEM_PROPERTIES);
+            return new BotanyHammer(attackDamage, attackSpeed, tier, mana, true, ExCompressumCompat.itemProperties());
         } else {
             return new DummyItem(MODID);
         }
@@ -34,7 +33,7 @@ public class ExCompressumCompat {
 
     public static Item makeCompressedElementiumHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana) {
         if (isExCompressumLoaded()) {
-            return new ElementiumHammer(attackDamage, attackSpeed, tier, mana, true, ITEM_PROPERTIES);
+            return new ElementiumHammer(attackDamage, attackSpeed, tier, mana, true, ExCompressumCompat.itemProperties());
         } else {
             return new DummyItem(MODID);
         }
@@ -42,7 +41,7 @@ public class ExCompressumCompat {
 
     public static Item makeCompressedTerraHammer(float attackDamage, float attackSpeed, IItemTier tier, int mana) {
         if (isExCompressumLoaded()) {
-            return new TerrasteelHammer(attackDamage, attackSpeed, tier, mana, true, ITEM_PROPERTIES);
+            return new TerrasteelHammer(attackDamage, attackSpeed, tier, mana, true, ExCompressumCompat.itemProperties());
         } else {
             return new DummyItem(MODID);
         }
@@ -50,5 +49,9 @@ public class ExCompressumCompat {
 
     public static boolean isExCompressumLoaded() {
         return ModList.get().isLoaded(MODID);
+    }
+
+    private static Item.Properties itemProperties() {
+        return new Item.Properties().group(ExNaturae.getInstance().tab).setISTER(() -> RenderCompressedItem::new);
     }
 }
