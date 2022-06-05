@@ -2,18 +2,21 @@ package de.melanx.exnaturae.data;
 
 import de.melanx.exnaturae.ExNaturae;
 import de.melanx.exnaturae.item.ModItems;
+import io.github.noeppi_noeppi.libx.annotation.data.Datagen;
 import io.github.noeppi_noeppi.libx.data.provider.ItemModelProviderBase;
+import io.github.noeppi_noeppi.libx.mod.ModX;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.item.Item;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
+@Datagen
 public class ItemModelProvider extends ItemModelProviderBase {
 
     private static final ResourceLocation LARGE_TOOL = new ResourceLocation(ExNaturae.getInstance().modid, "item/large_tool");
 
-    public ItemModelProvider(DataGenerator generator, ExistingFileHelper helper) {
-        super(ExNaturae.getInstance(), generator, helper);
+    public ItemModelProvider(DataGenerator generator, ModX mod, ExistingFileHelper helper) {
+        super(mod, generator, helper);
     }
 
     @Override

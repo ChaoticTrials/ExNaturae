@@ -1,60 +1,65 @@
 package de.melanx.exnaturae.client;
 
-import com.mojang.blaze3d.matrix.MatrixStack;
-import com.mojang.blaze3d.vertex.IVertexBuilder;
+import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.mojang.math.Vector3f;
 import de.melanx.exnaturae.item.ModItems;
-import io.github.noeppi_noeppi.libx.annotation.Model;
+import io.github.noeppi_noeppi.libx.annotation.model.Model;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.IRenderTypeBuffer;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
+import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.model.IBakedModel;
-import net.minecraft.client.renderer.model.ItemCameraTransforms;
+import net.minecraft.client.renderer.block.model.ItemTransforms;
+import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
-import net.minecraft.client.renderer.tileentity.ItemStackTileEntityRenderer;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.vector.Vector3f;
+import net.minecraft.client.resources.model.BakedModel;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 
 import javax.annotation.Nonnull;
 
-public class RenderCompressedItem extends ItemStackTileEntityRenderer {
+public class RenderCompressedItem extends BlockEntityWithoutLevelRenderer {
 
     @Model("item/compressed_livingwood_hammer_gui")
-    public static IBakedModel compressedLivingwoodHammerGui = null;
+    public static BakedModel compressedLivingwoodHammerGui = null;
     @Model("item/compressed_livingwood_hammer_hand")
-    public static IBakedModel compressedLivingwoodHammerHand = null;
+    public static BakedModel compressedLivingwoodHammerHand = null;
     @Model("item/compressed_livingrock_hammer_gui")
-    public static IBakedModel compressedLivingrockHammerGui = null;
+    public static BakedModel compressedLivingrockHammerGui = null;
     @Model("item/compressed_livingrock_hammer_hand")
-    public static IBakedModel compressedLivingrockHammerHand = null;
+    public static BakedModel compressedLivingrockHammerHand = null;
     @Model("item/compressed_manasteel_hammer_gui")
-    public static IBakedModel compressedManasteelHammerGui = null;
+    public static BakedModel compressedManasteelHammerGui = null;
     @Model("item/compressed_manasteel_hammer_hand")
-    public static IBakedModel compressedManasteelHammerHand = null;
+    public static BakedModel compressedManasteelHammerHand = null;
     @Model("item/compressed_elementium_hammer_gui")
-    public static IBakedModel compressedElementiumHammerGui = null;
+    public static BakedModel compressedElementiumHammerGui = null;
     @Model("item/compressed_elementium_hammer_hand")
-    public static IBakedModel compressedElementiumHammerHand = null;
+    public static BakedModel compressedElementiumHammerHand = null;
     @Model("item/compressed_terrasteel_hammer_gui")
-    public static IBakedModel compressedTerraHammerGui = null;
+    public static BakedModel compressedTerraHammerGui = null;
     @Model("item/compressed_terrasteel_hammer_hand")
-    public static IBakedModel compressedTerraHammerHand = null;
+    public static BakedModel compressedTerraHammerHand = null;
     @Model("item/compressed_livingwood_crook_gui")
-    public static IBakedModel compressedLivingwoodCrookGui = null;
+    public static BakedModel compressedLivingwoodCrookGui = null;
     @Model("item/compressed_livingwood_crook_hand")
-    public static IBakedModel compressedLivingwoodCrookHand = null;
+    public static BakedModel compressedLivingwoodCrookHand = null;
     @Model("item/compressed_dreamwood_crook_gui")
-    public static IBakedModel compressedDreamwoodCrookGui = null;
+    public static BakedModel compressedDreamwoodCrookGui = null;
     @Model("item/compressed_dreamwood_crook_hand")
-    public static IBakedModel compressedDreamwoodCrookHand = null;
+    public static BakedModel compressedDreamwoodCrookHand = null;
+
+    public RenderCompressedItem(BlockEntityRendererProvider.Context context) {
+        super(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels());
+    }
 
     @Override
-    public void render(@Nonnull ItemStack stack, @Nonnull ItemCameraTransforms.TransformType transform, @Nonnull MatrixStack ms, @Nonnull IRenderTypeBuffer buffer, int light, int overlay) {
+    public void renderByItem(@Nonnull ItemStack stack, @Nonnull ItemTransforms.TransformType transform, @Nonnull PoseStack poseStack, @Nonnull MultiBufferSource buffer, int light, int overlay) {
         Minecraft mc = Minecraft.getInstance();
-        IVertexBuilder vertex = buffer.getBuffer(RenderType.getCutout());
+        VertexConsumer vertex = buffer.getBuffer(RenderType.cutout());
 
-        IBakedModel guiModel;
-        IBakedModel handModel;
+        BakedModel guiModel;
+        BakedModel handModel;
         Item item = stack.getItem();
 
         if (item == ModItems.compressedLivingwoodHammer) {
@@ -80,17 +85,17 @@ public class RenderCompressedItem extends ItemStackTileEntityRenderer {
             handModel = compressedDreamwoodCrookHand;
         }
 
-        if (transform == ItemCameraTransforms.TransformType.GUI) {
-            mc.getItemRenderer().renderModel(guiModel, stack, light, OverlayTexture.NO_OVERLAY, ms, vertex);
-        } else if (transform.isFirstPerson()) {
-            mc.getItemRenderer().renderModel(guiModel, stack, light / 2, OverlayTexture.NO_OVERLAY, ms, vertex);
+        if (transform == ItemTransforms.TransformType.GUI) {
+            mc.getItemRenderer().renderModelLists(guiModel, stack, light, OverlayTexture.NO_OVERLAY, poseStack, vertex);
+        } else if (transform.firstPerson()) {
+            mc.getItemRenderer().renderModelLists(guiModel, stack, light / 2, OverlayTexture.NO_OVERLAY, poseStack, vertex);
         } else {
-            ms.push();
-            ms.rotate(Vector3f.ZP.rotationDegrees(-20));
-            ms.translate(-0.5, -0.35, -0.25);
-            ms.scale(2, 2, 1.5F);
-            mc.getItemRenderer().renderModel(handModel, stack, light / 2, OverlayTexture.NO_OVERLAY, ms, vertex);
-            ms.pop();
+            poseStack.pushPose();
+            poseStack.mulPose(Vector3f.ZP.rotationDegrees(-20));
+            poseStack.translate(-0.5, -0.35, -0.25);
+            poseStack.scale(2, 2, 1.5F);
+            mc.getItemRenderer().renderModelLists(handModel, stack, light / 2, OverlayTexture.NO_OVERLAY, poseStack, vertex);
+            poseStack.popPose();
         }
     }
 }

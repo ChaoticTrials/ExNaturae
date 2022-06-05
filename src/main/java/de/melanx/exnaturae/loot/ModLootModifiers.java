@@ -1,6 +1,6 @@
 package de.melanx.exnaturae.loot;
 
-import io.github.noeppi_noeppi.libx.annotation.RegisterClass;
+import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 
 @RegisterClass

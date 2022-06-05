@@ -1,6 +1,6 @@
 package de.melanx.exnaturae;
 
-import io.github.noeppi_noeppi.libx.annotation.RegisterConfig;
+import io.github.noeppi_noeppi.libx.annotation.config.RegisterConfig;
 import io.github.noeppi_noeppi.libx.config.Config;
 
 @RegisterConfig

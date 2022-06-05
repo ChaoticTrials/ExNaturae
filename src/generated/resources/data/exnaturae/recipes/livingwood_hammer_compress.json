@@ -11,17 +11,17 @@
       "recipe": {
         "type": "minecraft:crafting_shaped",
         "pattern": [
-          "rr",
-          " r",
-          " r"
+          "aaa",
+          "aaa",
+          "aaa"
         ],
         "key": {
-          "r": {
-            "item": "exnaturae:dreamwood_crook"
+          "a": {
+            "item": "exnaturae:livingwood_hammer"
           }
         },
         "result": {
-          "item": "exnaturae:compressed_dreamwood_crook"
+          "item": "exnaturae:compressed_livingwood_hammer"
         }
       }
     },

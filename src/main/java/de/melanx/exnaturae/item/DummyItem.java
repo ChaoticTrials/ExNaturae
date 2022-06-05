@@ -1,14 +1,14 @@
 package de.melanx.exnaturae.item;
 
 import de.melanx.exnaturae.ExNaturae;
-import net.minecraft.block.BlockState;
-import net.minecraft.client.util.ITooltipFlag;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.World;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.fml.ModList;
 
 import javax.annotation.Nonnull;
@@ -29,11 +29,13 @@ public class DummyItem extends Item {
         return 0.0F;
     }
 
+
     @Override
-    public void addInformation(@Nonnull ItemStack stack, @Nullable World world, @Nonnull List<ITextComponent> tooltip, @Nonnull ITooltipFlag flag) {
+    public void appendHoverText(@Nonnull ItemStack stack, @Nullable Level level, @Nonnull List<Component> tooltip, @Nonnull TooltipFlag flag) {
         if (this.modid != null && !ModList.get().isLoaded(this.modid)) {
-            tooltip.add(new TranslationTextComponent(ExNaturae.getInstance().modid + ".compat.mod_not_loaded", this.modid).mergeStyle(TextFormatting.RED));
+            tooltip.add(new TranslatableComponent(ExNaturae.getInstance().modid + ".compat.mod_not_loaded", this.modid).withStyle(ChatFormatting.RED));
         }
-        super.addInformation(stack, world, tooltip, flag);
+
+        super.appendHoverText(stack, level, tooltip, flag);
     }
 }

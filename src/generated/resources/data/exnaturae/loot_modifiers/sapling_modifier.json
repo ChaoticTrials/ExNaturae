@@ -3,7 +3,9 @@
     {
       "condition": "minecraft:match_tool",
       "predicate": {
-        "item": "exnaturae:dreamwood_crook"
+        "items": [
+          "exnaturae:dreamwood_crook"
+        ]
       }
     }
   ],

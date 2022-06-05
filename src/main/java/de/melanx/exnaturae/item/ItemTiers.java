@@ -1,86 +1,96 @@
 package de.melanx.exnaturae.item;
 
-import net.minecraft.item.IItemTier;
-import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.LazyValue;
+import io.github.noeppi_noeppi.libx.util.LazyValue;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.block.Block;
+import vazkii.botania.common.block.ModBlocks;
 import vazkii.botania.common.lib.ModTags;
 
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
-public enum ItemTiers implements IItemTier {
-    LIVINGWOOD_TIER(68, 2.0F, 0.5F, 0, 18, () -> Ingredient.fromTag(ModTags.Items.LIVINGWOOD)),
+public enum ItemTiers implements Tier {
+    LIVINGWOOD_TIER(68, 2.0F, 0.5F, 0, 18, () -> Ingredient.of(ModTags.Items.LIVINGWOOD_LOGS)),
     DREAMWOOD_TIER(LIVINGWOOD_TIER) {
         @Override
-        public int getEnchantability() {
+        public int getEnchantmentValue() {
             return 28;
         }
 
         @Override
-        public float getEfficiency() {
+        public float getSpeed() {
             return 2.5F;
         }
 
         @Override
-        public int getMaxUses() {
-            return (int) (super.getMaxUses() * 1.5F);
+        public int getUses() {
+            return (int) (super.getUses() * 1.5F);
         }
     },
-    LIVINGROCK_ITEM_TIER(191, 4.5F, 2.5F, 1, 10, () -> Ingredient.fromTag(ModTags.Items.LIVINGROCK));
+    LIVINGROCK_ITEM_TIER(191, 4.5F, 2.5F, 1, 10, () -> Ingredient.of(ModBlocks.livingrock));
 
     private final int durability;
-    private final float efficiency;
-    private final float attackDamage;
+    private final float speed;
+    private final float attackDamageBonus;
     private final int harvestLevel;
-    private final int enchantability;
-    private final LazyValue<Ingredient> repairMaterial;
+    private final int enchantmentValue;
+    private final LazyValue<Ingredient> repairIngredient;
 
-    ItemTiers(int durability, double efficiency, float attackDamage, int harvestLevel, int enchantability, Supplier<Ingredient> repairMaterial) {
+    ItemTiers(int durability, double speed, float attackDamageBonus, int harvestLevel, int enchantmentValue, Supplier<Ingredient> repairIngredient) {
         this.durability = durability;
-        this.efficiency = (float) efficiency;
-        this.attackDamage = attackDamage;
+        this.speed = (float) speed;
+        this.attackDamageBonus = attackDamageBonus;
         this.harvestLevel = harvestLevel;
-        this.enchantability = enchantability;
-        this.repairMaterial = new LazyValue<>(repairMaterial);
+        this.enchantmentValue = enchantmentValue;
+        this.repairIngredient = new LazyValue<>(repairIngredient);
     }
 
-    ItemTiers(IItemTier delegate) {
-        this.durability = delegate.getMaxUses();
-        this.efficiency = delegate.getEfficiency();
-        this.attackDamage = delegate.getAttackDamage();
-        this.harvestLevel = delegate.getHarvestLevel();
-        this.enchantability = delegate.getEnchantability();
-        this.repairMaterial = new LazyValue<>(delegate::getRepairMaterial);
+    ItemTiers(Tier delegate) {
+        this.durability = delegate.getUses();
+        this.speed = delegate.getSpeed();
+        this.attackDamageBonus = delegate.getAttackDamageBonus();
+        this.harvestLevel = delegate.getLevel();
+        this.enchantmentValue = delegate.getEnchantmentValue();
+        this.repairIngredient = new LazyValue<>(delegate::getRepairIngredient);
     }
 
     @Override
-    public int getMaxUses() {
+    public int getUses() {
         return this.durability;
     }
 
     @Override
-    public float getEfficiency() {
-        return this.efficiency;
+    public float getSpeed() {
+        return this.speed;
     }
 
     @Override
-    public float getAttackDamage() {
-        return this.attackDamage;
+    public float getAttackDamageBonus() {
+        return this.attackDamageBonus;
     }
 
     @Override
-    public int getHarvestLevel() {
+    public int getLevel() {
         return this.harvestLevel;
     }
 
     @Override
-    public int getEnchantability() {
-        return this.enchantability;
+    public int getEnchantmentValue() {
+        return this.enchantmentValue;
     }
 
     @Nonnull
     @Override
-    public Ingredient getRepairMaterial() {
-        return this.repairMaterial.getValue();
+    public Ingredient getRepairIngredient() {
+        return this.repairIngredient.get();
+    }
+
+    @Nullable
+    @Override
+    public TagKey<Block> getTag() {
+        return Tier.super.getTag();
     }
 }

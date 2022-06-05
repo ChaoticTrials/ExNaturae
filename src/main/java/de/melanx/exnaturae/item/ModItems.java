@@ -5,8 +5,8 @@ import de.melanx.exnaturae.item.crook.BotanyCrook;
 import de.melanx.exnaturae.item.hammer.BotanyHammer;
 import de.melanx.exnaturae.item.hammer.ElementiumHammer;
 import de.melanx.exnaturae.item.hammer.TerrasteelHammer;
-import io.github.noeppi_noeppi.libx.annotation.RegisterClass;
-import net.minecraft.item.Item;
+import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
+import net.minecraft.world.item.Item;
 import vazkii.botania.api.BotaniaAPI;
 
 @RegisterClass

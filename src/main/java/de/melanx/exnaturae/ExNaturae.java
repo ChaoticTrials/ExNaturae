@@ -1,34 +1,35 @@
 package de.melanx.exnaturae;
 
-import de.melanx.exnaturae.data.DataGenerators;
 import de.melanx.exnaturae.item.ModItems;
 import io.github.noeppi_noeppi.libx.mod.registration.ModXRegistration;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import io.github.noeppi_noeppi.libx.mod.registration.RegistrationBuilder;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 import javax.annotation.Nonnull;
 
 @Mod("exnaturae")
-public class ExNaturae extends ModXRegistration {
+public final class ExNaturae extends ModXRegistration {
 
     private static ExNaturae instance;
 
     public ExNaturae() {
-        super("exnaturae", new ItemGroup("exnaturae") {
+        super(new CreativeModeTab("exnaturae") {
             @Nonnull
             @Override
-            public ItemStack createIcon() {
+            public ItemStack makeIcon() {
                 return new ItemStack(ModItems.elementiumHammer);
             }
         });
-
         instance = this;
+    }
 
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(DataGenerators::gatherData);
+    @Override
+    protected void initRegistration(RegistrationBuilder builder) {
+        builder.setVersion(1);
     }
 
     @Override
@@ -43,5 +44,11 @@ public class ExNaturae extends ModXRegistration {
 
     public static ExNaturae getInstance() {
         return instance;
+    }
+
+    @Nonnull
+    public static CreativeModeTab tab() {
+        //noinspection ConstantConditions
+        return ExNaturae.getInstance().tab;
     }
 }

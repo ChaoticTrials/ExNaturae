@@ -1,8 +1,9 @@
 buildscript {
-    apply from: 'https://raw.githubusercontent.com/noeppi-noeppi/ModUtils/master/buildscript.gradle', to: buildscript
+    apply from: 'https://noeppi-noeppi.github.io/ModUtils/v3/buildscript.gradle', to: buildscript
 }
 
-apply from: 'https://raw.githubusercontent.com/noeppi-noeppi/ModUtils/master/mod.gradle'
+apply from: 'https://noeppi-noeppi.github.io/ModUtils/v3/mod.gradle'
+apply plugin: 'io.github.noeppi_noeppi.tools.modgradle.cursedep'
 
 repositories {
     maven {
@@ -28,16 +29,16 @@ repositories {
 }
 
 dependencies {
-    annotationProcessor fg.deobf("io.github.noeppi_noeppi.mods:LibX:1.16.3-1.0.63")
-    compile fg.deobf("io.github.noeppi_noeppi.mods:LibX:1.16.3-1.0.63")
+    annotationProcessor fg.deobf("io.github.noeppi_noeppi.mods:LibX:1.18.2-3.2.15")
+    implementation fg.deobf("io.github.noeppi_noeppi.mods:LibX:1.18.2-3.2.15")
 
-    compile fg.deobf("curse.maven:ex-nihilo-sequentia-400012:3294507") // 1.16-2.0.2.6
-    compile fg.deobf("vazkii.botania:Botania:1.16.4-414")
+    implementation curse.mod(400012, 3810814) // Ex Nihilo: Sequentia 1.18.2-20220530-183458
+    implementation fg.deobf("vazkii.botania:Botania:1.18.2-433")
 
-    compile fg.deobf("curse.maven:ex-compressum-241967:3226248") // 1.16.5-4.0.2
+//    implementation curse.mod(241967, 3226248) // Ex Compressum 1.16.5-4.0.2
 
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.16.4-4.0.3.0")
-    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.16.4-48")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.16.4:7.6.0.62")
-    runtimeOnly fg.deobf("de.melanx.recipeprinter:recipeprinter-1.16.3:2.0.4")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.18.2-5.0.7.0")
+    runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.18.2-69")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.18.2:9.5.5.174")
+    runtimeOnly fg.deobf("de.melanx:RecipePrinter:1.18.2-3.2.0")
 }

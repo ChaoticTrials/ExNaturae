@@ -1,6 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "group": "crook",
   "pattern": [
     "rr",
     " r",
