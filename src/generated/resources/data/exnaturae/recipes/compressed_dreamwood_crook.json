@@ -4,22 +4,22 @@
     {
       "conditions": [
         {
-          "modid": "excompressum",
-          "type": "forge:mod_loaded"
+          "type": "forge:mod_loaded",
+          "modid": "excompressum"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "rr",
-          " r",
-          " r"
-        ],
         "key": {
           "r": {
             "item": "exnaturae:dreamwood_crook"
           }
         },
+        "pattern": [
+          "rr",
+          " r",
+          " r"
+        ],
         "result": {
           "item": "exnaturae:compressed_dreamwood_crook"
         }

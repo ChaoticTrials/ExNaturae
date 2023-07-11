@@ -3,7 +3,6 @@ package de.melanx.exnaturae.item;
 import de.melanx.exnaturae.ExNaturae;
 import net.minecraft.ChatFormatting;
 import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -33,7 +32,7 @@ public class DummyItem extends Item {
     @Override
     public void appendHoverText(@Nonnull ItemStack stack, @Nullable Level level, @Nonnull List<Component> tooltip, @Nonnull TooltipFlag flag) {
         if (this.modid != null && !ModList.get().isLoaded(this.modid)) {
-            tooltip.add(new TranslatableComponent(ExNaturae.getInstance().modid + ".compat.mod_not_loaded", this.modid).withStyle(ChatFormatting.RED));
+            tooltip.add(Component.translatable(ExNaturae.getInstance().modid + ".compat.mod_not_loaded", this.modid).withStyle(ChatFormatting.RED));
         }
 
         super.appendHoverText(stack, level, tooltip, flag);

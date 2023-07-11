@@ -4,22 +4,22 @@
     {
       "conditions": [
         {
-          "modid": "excompressum",
-          "type": "forge:mod_loaded"
+          "type": "forge:mod_loaded",
+          "modid": "excompressum"
         }
       ],
       "recipe": {
         "type": "minecraft:crafting_shaped",
-        "pattern": [
-          "aaa",
-          "aaa",
-          "aaa"
-        ],
         "key": {
           "a": {
             "item": "exnaturae:manasteel_hammer"
           }
         },
+        "pattern": [
+          "aaa",
+          "aaa",
+          "aaa"
+        ],
         "result": {
           "item": "exnaturae:compressed_manasteel_hammer"
         }

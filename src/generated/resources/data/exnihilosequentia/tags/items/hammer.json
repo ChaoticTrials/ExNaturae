@@ -1,10 +1,9 @@
 {
-  "replace": false,
   "values": [
-    "exnaturae:livingwood_hammer",
-    "exnaturae:livingrock_hammer",
-    "exnaturae:manasteel_hammer",
     "exnaturae:elementium_hammer",
+    "exnaturae:livingrock_hammer",
+    "exnaturae:livingwood_hammer",
+    "exnaturae:manasteel_hammer",
     "exnaturae:terrasteel_hammer"
   ]
 }

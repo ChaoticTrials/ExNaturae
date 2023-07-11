@@ -1,15 +1,14 @@
 package de.melanx.exnaturae.data;
 
 import de.melanx.exnaturae.item.ModItems;
-import de.melanx.exnaturae.loot.ModLootModifiers;
 import de.melanx.exnaturae.loot.SaplingModifier;
-import io.github.noeppi_noeppi.libx.annotation.data.Datagen;
-import io.github.noeppi_noeppi.libx.mod.ModX;
 import net.minecraft.advancements.critereon.ItemPredicate;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.predicates.MatchTool;
 import net.minecraftforge.common.data.GlobalLootModifierProvider;
+import org.moddingx.libx.annotation.data.Datagen;
+import org.moddingx.libx.mod.ModX;
 
 @Datagen
 public class LootModifierProvider extends GlobalLootModifierProvider {
@@ -20,7 +19,7 @@ public class LootModifierProvider extends GlobalLootModifierProvider {
 
     @Override
     protected void start() {
-        this.add("sapling_modifier", ModLootModifiers.saplingModifier, new SaplingModifier(new LootItemCondition[]{
+        this.add("sapling_modifier", new SaplingModifier(new LootItemCondition[]{
                 MatchTool.toolMatches(ItemPredicate.Builder.item().of(ModItems.dreamwoodCrook)).build()
         }));
     }

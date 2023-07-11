@@ -1,19 +1,19 @@
 package de.melanx.exnaturae.item;
 
-import io.github.noeppi_noeppi.libx.util.LazyValue;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
-import vazkii.botania.common.block.ModBlocks;
-import vazkii.botania.common.lib.ModTags;
+import org.moddingx.libx.util.lazy.LazyValue;
+import vazkii.botania.common.block.BotaniaBlocks;
+import vazkii.botania.common.lib.BotaniaTags;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 public enum ItemTiers implements Tier {
-    LIVINGWOOD_TIER(68, 2.0F, 0.5F, 0, 18, () -> Ingredient.of(ModTags.Items.LIVINGWOOD_LOGS)),
+    LIVINGWOOD_TIER(68, 2.0F, 0.5F, 0, 18, () -> Ingredient.of(BotaniaTags.Items.LIVINGWOOD_LOGS)),
     DREAMWOOD_TIER(LIVINGWOOD_TIER) {
         @Override
         public int getEnchantmentValue() {
@@ -30,7 +30,7 @@ public enum ItemTiers implements Tier {
             return (int) (super.getUses() * 1.5F);
         }
     },
-    LIVINGROCK_ITEM_TIER(191, 4.5F, 2.5F, 1, 10, () -> Ingredient.of(ModBlocks.livingrock));
+    LIVINGROCK_ITEM_TIER(191, 4.5F, 2.5F, 1, 10, () -> Ingredient.of(BotaniaBlocks.livingrock));
 
     private final int durability;
     private final float speed;

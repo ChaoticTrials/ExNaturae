@@ -4,7 +4,6 @@ import de.melanx.exnaturae.ExNaturae;
 import de.melanx.exnaturae.client.RenderCompressedItem;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
-import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,7 +14,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraftforge.client.IItemRenderProperties;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import novamachina.exnihilosequentia.common.registries.ExNihiloRegistries;
 import vazkii.botania.api.mana.ManaItemHandler;
 import vazkii.botania.common.item.equipment.tool.ToolCommons;
@@ -47,21 +46,16 @@ public class BotanyHammer extends DiggerItem {
     }
 
     @Override
-    public void initializeClient(@Nonnull Consumer<IItemRenderProperties> consumer) {
-        consumer.accept(new IItemRenderProperties() {
+    public void initializeClient(@Nonnull Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
 
             @Override
-            public BlockEntityWithoutLevelRenderer getItemStackRenderer() {
+            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
                 if (!BotanyHammer.this.compressed) {
                     return Minecraft.getInstance().getItemRenderer().getBlockEntityRenderer();
                 }
 
-                return new RenderCompressedItem(new BlockEntityRendererProvider.Context(
-                        Minecraft.getInstance().getBlockEntityRenderDispatcher(),
-                        Minecraft.getInstance().getBlockRenderer(),
-                        Minecraft.getInstance().getEntityModels(),
-                        Minecraft.getInstance().font
-                ));
+                return new RenderCompressedItem();
             }
         });
     }

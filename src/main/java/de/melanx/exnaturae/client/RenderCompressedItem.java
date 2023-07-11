@@ -4,17 +4,16 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Vector3f;
 import de.melanx.exnaturae.item.ModItems;
-import io.github.noeppi_noeppi.libx.annotation.model.Model;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.block.model.ItemTransforms;
-import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import org.moddingx.libx.annotation.model.Model;
 
 import javax.annotation.Nonnull;
 
@@ -49,7 +48,7 @@ public class RenderCompressedItem extends BlockEntityWithoutLevelRenderer {
     @Model("item/compressed_dreamwood_crook_hand")
     public static BakedModel compressedDreamwoodCrookHand = null;
 
-    public RenderCompressedItem(BlockEntityRendererProvider.Context context) {
+    public RenderCompressedItem() {
         super(Minecraft.getInstance().getBlockEntityRenderDispatcher(), Minecraft.getInstance().getEntityModels());
     }
 

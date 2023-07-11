@@ -2,15 +2,15 @@ package de.melanx.exnaturae.data;
 
 import de.melanx.exnaturae.compat.excompressum.ExCompressumCompat;
 import de.melanx.exnaturae.item.ModItems;
-import io.github.noeppi_noeppi.libx.annotation.data.Datagen;
-import io.github.noeppi_noeppi.libx.data.provider.recipe.RecipeProviderBase;
-import io.github.noeppi_noeppi.libx.data.provider.recipe.crafting.CompressionExtension;
-import io.github.noeppi_noeppi.libx.data.provider.recipe.crafting.CraftingExtension;
-import io.github.noeppi_noeppi.libx.mod.ModX;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.common.crafting.conditions.ModLoadedCondition;
+import org.moddingx.libx.annotation.data.Datagen;
+import org.moddingx.libx.datagen.provider.recipe.RecipeProviderBase;
+import org.moddingx.libx.datagen.provider.recipe.crafting.CompressionExtension;
+import org.moddingx.libx.datagen.provider.recipe.crafting.CraftingExtension;
+import org.moddingx.libx.mod.ModX;
 
 import java.util.List;
 

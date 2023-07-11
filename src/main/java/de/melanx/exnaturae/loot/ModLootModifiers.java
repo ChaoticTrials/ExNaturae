@@ -1,10 +1,10 @@
 package de.melanx.exnaturae.loot;
 
-import io.github.noeppi_noeppi.libx.annotation.registration.RegisterClass;
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
+import com.mojang.serialization.Codec;
+import org.moddingx.libx.annotation.registration.RegisterClass;
 
-@RegisterClass
+@RegisterClass(registry = "GLOBAL_LOOT_MODIFIER_SERIALIZERS")
 public class ModLootModifiers {
 
-    public static final GlobalLootModifierSerializer<SaplingModifier> saplingModifier = new SaplingModifier.Serializer();
+    public static final Codec<SaplingModifier> saplingModifier = SaplingModifier.CODEC;
 }

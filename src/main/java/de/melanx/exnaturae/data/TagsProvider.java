@@ -3,8 +3,6 @@ package de.melanx.exnaturae.data;
 import de.melanx.exnaturae.ExNaturae;
 import de.melanx.exnaturae.item.crook.BotanyCrook;
 import de.melanx.exnaturae.item.hammer.BotanyHammer;
-import io.github.noeppi_noeppi.libx.annotation.data.Datagen;
-import io.github.noeppi_noeppi.libx.data.provider.CommonTagsProviderBase;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
@@ -12,6 +10,8 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import novamachina.exnihilosequentia.api.tag.ExNihiloTags;
+import org.moddingx.libx.annotation.data.Datagen;
+import org.moddingx.libx.datagen.provider.CommonTagsProviderBase;
 
 @Datagen
 public class TagsProvider extends CommonTagsProviderBase {

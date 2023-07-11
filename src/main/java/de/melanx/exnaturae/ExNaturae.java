@@ -1,13 +1,13 @@
 package de.melanx.exnaturae;
 
 import de.melanx.exnaturae.item.ModItems;
-import io.github.noeppi_noeppi.libx.mod.registration.ModXRegistration;
-import io.github.noeppi_noeppi.libx.mod.registration.RegistrationBuilder;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import org.moddingx.libx.mod.ModXRegistration;
+import org.moddingx.libx.registration.RegistrationBuilder;
 
 import javax.annotation.Nonnull;
 
@@ -29,17 +29,17 @@ public final class ExNaturae extends ModXRegistration {
 
     @Override
     protected void initRegistration(RegistrationBuilder builder) {
-        builder.setVersion(1);
+        builder.enableRegistryTracking();
     }
 
     @Override
     protected void setup(FMLCommonSetupEvent fmlCommonSetupEvent) {
-
+        // NO-OP
     }
 
     @Override
     protected void clientSetup(FMLClientSetupEvent fmlClientSetupEvent) {
-
+        // NO-OP
     }
 
     public static ExNaturae getInstance() {

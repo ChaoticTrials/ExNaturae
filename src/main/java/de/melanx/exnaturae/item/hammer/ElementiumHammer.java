@@ -14,7 +14,7 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
-import vazkii.botania.common.entity.EntityPixie;
+import vazkii.botania.common.entity.PixieEntity;
 
 import javax.annotation.Nonnull;
 
@@ -47,7 +47,7 @@ public class ElementiumHammer extends BotanyHammer {
 
             if (Math.random() < ExConfig.pixieSpawnChance) {
                 Monster nearest = level.getNearestEntity(Monster.class, TargetingConditions.DEFAULT, entity, 5, 5, 5, this.getBoundingBox(pos, ExConfig.detectEntityRange));
-                EntityPixie pixie = new EntityPixie(level);
+                PixieEntity pixie = new PixieEntity(level);
                 pixie.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
                 pixie.setProps(nearest, entity, 0, (float) (5 * Math.random()));
                 pixie.finalizeSpawn((ServerLevel) level, level.getCurrentDifficultyAt(pos), MobSpawnType.EVENT, null, null);

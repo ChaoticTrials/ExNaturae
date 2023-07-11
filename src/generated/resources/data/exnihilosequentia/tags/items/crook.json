@@ -1,7 +1,6 @@
 {
-  "replace": false,
   "values": [
-    "exnaturae:livingwood_crook",
-    "exnaturae:dreamwood_crook"
+    "exnaturae:dreamwood_crook",
+    "exnaturae:livingwood_crook"
   ]
 }

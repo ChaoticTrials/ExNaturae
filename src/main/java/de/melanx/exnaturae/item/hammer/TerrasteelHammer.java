@@ -14,13 +14,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
-import vazkii.botania.api.item.ISequentialBreaker;
+import vazkii.botania.api.item.SequentialBreaker;
 import vazkii.botania.common.item.equipment.tool.ToolCommons;
-import vazkii.botania.common.item.relic.ItemThorRing;
+import vazkii.botania.common.item.relic.RingOfThorItem;
 
 import javax.annotation.Nonnull;
 
-public class TerrasteelHammer extends BotanyHammer implements ISequentialBreaker {
+public class TerrasteelHammer extends BotanyHammer implements SequentialBreaker {
 
     private static final float r = 0.3F;
     private static final float g = 1;
@@ -59,11 +59,11 @@ public class TerrasteelHammer extends BotanyHammer implements ISequentialBreaker
         Level level = player.level;
         BlockState state = level.getBlockState(pos);
 
-        if (!this.isCorrectToolForDrops(state)) {
+        if (!this.isCorrectToolForDrops(stack, state)) {
             return;
         }
 
-        boolean thor = !ItemThorRing.getThorRing(player).isEmpty();
+        boolean thor = !RingOfThorItem.getThorRing(player).isEmpty();
         boolean doX = thor || side.getStepX() == 0;
         boolean doY = thor || side.getStepY() == 0;
         boolean doZ = thor || side.getStepZ() == 0;
@@ -72,7 +72,7 @@ public class TerrasteelHammer extends BotanyHammer implements ISequentialBreaker
         Vec3i beginDiff = new Vec3i(doX ? -range : 0, doY ? -1 : 0, doZ ? -range : 0);
         Vec3i endDiff = new Vec3i(doX ? range : 0, doY ? 1 : 0, doZ ? range : 0);
 
-        ToolCommons.removeBlocksInIteration(player, stack, level, originPos, beginDiff, endDiff, this::isCorrectToolForDrops);
+        ToolCommons.removeBlocksInIteration(player, stack, level, originPos, beginDiff, endDiff, state1 -> this.isCorrectToolForDrops(stack, state1));
     }
 
     @Override
