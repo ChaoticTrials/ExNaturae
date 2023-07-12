@@ -7,10 +7,9 @@ apply plugin: 'org.moddingx.modgradle.cursedep'
 
 repositories {
     maven {
-        name = "Modrinth"
-        url = "https://api.modrinth.com/maven"
+        name = "Ex Nihilo"
+        url = "https://dl.cloudsmith.io/public/novamachina-mods/ex-nihilo-sequentia/maven/"
     }
-
     maven {
         name = "JEI"
         url = "https://modmaven.dev/"
@@ -36,8 +35,8 @@ repositories {
 dependencies {
     annotationProcessor fg.deobf("org.moddingx:LibX:1.19.2-4.2.8")
     implementation fg.deobf("org.moddingx:LibX:1.19.2-4.2.8")
+    implementation fg.deobf("novamachina.exnihilosequentia:ExNihiloSequentia:1.19.2-4.2.0.53")
 
-//    implementation curse.mod(400012, 4343775) // Ex Nihilo: Sequentia 1.18.2-20220530-183458
     implementation fg.deobf("vazkii.botania:Botania:1.19.2-439-FORGE")
 
 //    implementation curse.mod(241967, 3226248) // Ex Compressum 1.16.5-4.0.2
@@ -45,5 +44,4 @@ dependencies {
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.1.0")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77")
     runtimeOnly fg.deobf("mezz.jei:jei-1.19.2-forge:11.6.0.1015")
-    implementation fg.deobf("maven.modrinth:ex-nihilo-sequentia:1.19.2-4.2.0.53")
 }
