@@ -8,40 +8,24 @@ apply plugin: 'org.moddingx.modgradle.cursedep'
 repositories {
     maven {
         name = "Ex Nihilo"
-        url = "https://dl.cloudsmith.io/public/novamachina-mods/ex-nihilo-sequentia/maven/"
+        url = "https://dl.cloudsmith.io/public/novamachina-mods/release/maven/"
     }
     maven {
-        name = "JEI"
+        name = "ModMaven"
         url = "https://modmaven.dev/"
-    }
-    maven {
-        name = "curios"
-        url = "https://maven.theillusivec4.top/"
-    }
-    maven {
-        name = "LibX"
-        url = "https://maven.melanx.de/"
-    }
-    maven {
-        name = "CurseForge"
-        url = "https://www.cursemaven.com"
-    }
-    maven {
-        name = "botania"
-        url = "https://maven.blamejared.com/"
     }
 }
 
 dependencies {
     annotationProcessor fg.deobf("org.moddingx:LibX:1.19.2-4.2.8")
     implementation fg.deobf("org.moddingx:LibX:1.19.2-4.2.8")
-    implementation fg.deobf("novamachina.exnihilosequentia:ExNihiloSequentia:1.19.2-4.2.0.53")
+    implementation fg.deobf("novamachina.exnihilosequentia:ExNihiloSequentia:1.19.2-4.2.0.64")
 
-    implementation fg.deobf("vazkii.botania:Botania:1.19.2-439-FORGE")
+    implementation fg.deobf("vazkii.botania:Botania:1.19.2-440-FORGE")
 
 //    implementation curse.mod(241967, 3226248) // Ex Compressum 1.16.5-4.0.2
 
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.1.0")
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:1.19.2-5.1.6.1")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:1.19.2-77")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.19.2-forge:11.6.0.1015")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.19.2-forge:11.6.0.1019")
 }
